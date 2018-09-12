@@ -1,0 +1,31 @@
+﻿@model IEnumerable<OlympicFinalProject.Models.OlympicGames3Entities>
+@{
+    ViewBag.Title = "CountryInput";
+    Layout = "~/Views/Shared/CustomLayout.cshtml";
+}
+<div>
+    <h3 style="text-align: center; color:lightgreen; font-weight:600">See medal count for your country in every Olympic Game</h3>
+
+
+    @using (@Html.BeginForm("ShowCountryMdedalsByYear", "OlympicGames", FormMethod.Post))
+    {
+        <p>
+            <select class="form-control" id="country" name="country" style="display: inline; width: 160px;">
+                <option>Select Country</option>
+                @foreach (var item in ViewBag.countries)
+                {
+                    <option>@item.CountryAbr</option>
+                }
+            </select>
+            <select class="form-control" id="medal" name="medal" style="display: inline; width: 160px;">
+                <option>Select Medal</option>
+                @foreach (var item in ViewBag.medalTypes)
+                {
+                    <option>@item.MedalType1</option>
+                }
+            </select>
+
+            <input type="submit" value="Submit" />
+        </p>
+    }
+</div>

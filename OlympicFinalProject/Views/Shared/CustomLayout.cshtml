@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "CustomLayout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div id="linksMenu" class="col-md-2">
+        <p> @Html.ActionLink("Economy Impact", "ShowEconomyImpact", "OlympicGames", null, new { @class = "btn btn-default", @id = "economy" })</p>
+        <p> @Html.ActionLink("Top 50 Medalists", "ShowQuery", "OlympicGames", null, new { @class = "btn btn-default", @id = "top50" })</p>
+        <p> @Html.ActionLink("Medalists by country", "CountryInput", "OlympicGames", null, new { @class = "btn btn-default", @id = "countryInput" })</p>
+    </div>
+    <div id="olympicMainContent" class="col-md-10">
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+@Styles.Render("~/Content/bootstrap.css")
+@Styles.Render("~/Content/Index.css")
+@Styles.Render("~/Content/EconomyImpact.css")
+

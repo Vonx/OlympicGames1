@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Views/Shared/CustomLayout.cshtml";
+}
+
+<h3 style="text-align: center; color:lightgreen; font-weight:600">Top 50 Medalists</h3>
+<table class="table-striped table-bordered">
+    <tr>
+        <th>AthleteID</th>
+        <th>AthleteName</th>
+        <th>MedalCount</th>
+        <th>CountryName</th>
+    </tr>
+    @foreach (top50Model item in ViewBag.Data)
+    {
+        <tr>
+            <td>
+                @item.AthleteID
+            </td>
+            <td>
+                @item.AthleteName
+            </td>
+            <td>
+                @item.MedalCount
+            </td>
+            <td>
+                @item.CountryName
+            </td>
+        </tr>
+    }
+</table>
+
+
+

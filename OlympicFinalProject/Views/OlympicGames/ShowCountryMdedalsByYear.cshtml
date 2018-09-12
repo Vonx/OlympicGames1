@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "~/Views/Shared/CustomLayout.cshtml";
+}
+<div>
+    <h3 style="text-align: center; color:lightgreen; font-weight:600">See medal count for your country in every Olympic Game</h3>
+
+
+    @using (@Html.BeginForm("ShowCountryMdedalsByYear", "OlympicGames", FormMethod.Post))
+    {
+        <p>
+            <select class="form-control" id="country" name="country" style="display:inline; width:160px;">
+                <option>@ViewBag.selectedCountry</option>
+                @foreach (var item in ViewBag.countries)
+                {
+                    if (@item.CountryAbr!= @ViewBag.selectedCountry)
+                    {
+                         <option>@item.CountryAbr</option>
+                    }
+                   
+                }
+            </select>
+            <select class="form-control" id="medal" name="medal" style="display: inline; width: 160px;">
+                <option>@ViewBag.selectedMedal</option>
+                @foreach (var item in ViewBag.medalTypes)
+                {
+                    if (@item.MedalType1 != @ViewBag.selectedMedal)
+                    {
+                       <option>@item.MedalType1</option>
+                    }
+                }
+                @if ( @ViewBag.selectedMedal !="All Medals")
+                {
+                    <option>All Medals</option>
+                }
+                
+            </select>
+            <input type="submit" value="Submit" />
+        </p>
+    }
+</div>
+
+<h3 style="text-align: center; color:lightgreen; font-weight:600">Country Evolution</h3>
+<table class="table-striped table-bordered">
+    <tr>
+        <th>CountryName</th>
+        <th>Medalists Count</th>
+        <th>OlympicGameYear</th>
+        <th>HostingCity</th>
+        <th>Season</th>
+    </tr>
+    @foreach (CountryMedalsByYear item in ViewBag.countryEvolution)
+    {
+        <tr>
+            <td>
+                @item.CountryName
+            </td>
+            <td>
+                @item.MedalCount
+            </td>
+            <td>
+                @item.OlympicGameYear
+            </td>
+            <td>
+                @item.HostingCity
+            </td>
+            <td>
+                @item.Season
+            </td>
+        </tr>
+    }
+</table>

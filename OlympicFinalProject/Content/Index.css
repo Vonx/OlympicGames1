@@ -1,0 +1,68 @@
+﻿.jumbotron {
+    color:white;
+    font-size:40px;
+    display:inline;
+    float:left;
+    background-color:lightgreen;
+}
+img {
+    width:250px;
+}
+#olympicImage {
+    display:inline-block;
+    width:20%;
+    height:20%;
+    float:right;
+}
+
+#linksMenu {
+    padding: 1em;
+    padding-top:4em;
+    background-color:white;   
+    height:800px;
+}
+
+.btn-default {
+    color:white;
+    font-weight:600;
+    padding: 1em;
+    height: 50px;
+    width:200px;
+}
+
+#top50 {
+    background-color:LightSteelBlue ;
+}
+#economy {
+     background-color:goldenrod;
+}
+#countryInput {
+       background-color:lightcoral;
+}
+#economy2 {
+     background-color:lightcoral;
+}
+
+#olympicMainContent {
+    /*background-image: url("Images/160820_top-moments_0.jpg");
+    background-repeat:no-repeat;*/
+    /*background-color:lightgreen;*/
+}
+
+table {
+    margin:auto;
+}
+
+.mainTable{
+    margin-top: 30px;
+}
+
+.stretch {
+    margin-left:2em;
+    width:100%;
+    height:100%;
+}
+select {
+    margin-left: 10px;
+    margin-right: 10px;
+}

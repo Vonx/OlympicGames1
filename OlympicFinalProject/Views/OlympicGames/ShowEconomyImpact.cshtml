@@ -1,0 +1,78 @@
+﻿@{
+    Layout = "~/Views/Shared/CustomLayout.cshtml";
+}
+<table class="mainTable">
+
+    <tr>
+        <td valign="top">
+            <h3 style="text-align: center; color:lightgreen; font-weight:600"> High GDPPC - High Medalists Count</h3>
+            <table class="table-striped table-bordered">
+                <tr>
+                    <th>Country Name</th>
+                    <th>Medalists Count</th>
+                    <th>GDP per Capita</th>
+                </tr>
+                @foreach (countriesGrpdMedals item in ViewBag.highGDPCountries)
+                {
+                    <tr>
+                        <td>
+                            @item.CountryName
+                        </td>
+                        <td>
+                            @item.MedalCount
+                        </td>
+                        <td align="right">
+                            @Math.Round(@item.GDP)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </td>
+        <td valign="top">
+            <h3 style="text-align: center; color:lightgreen; font-weight:600">Low GDPPC  - High Medalists Count</h3>
+            <table class="table-striped table-bordered">
+                <tr>
+                    <th>Country Name</th>
+                    <th>Medalists Count</th>
+                    <th>GDP per Capita</th>
+                </tr>
+                @foreach (countriesGrpdMedals item in ViewBag.lowGDPCountries)
+                {
+                    <tr>
+                        <td>
+                            @item.CountryName
+                        </td>
+                        <td>
+                            @item.MedalCount
+                        </td>
+                        <td align="right">
+                            @Math.Round(@item.GDP)
+                        </td>
+                    </tr>
+                }
+            </table>
+            <h3 style="text-align: center; color:lightgreen; font-weight:600">High GDPPC Low Medalists Count</h3>
+            <table class="table-striped table-bordered">
+                <tr>
+                    <th>Country Name</th>
+                    <th>Medalists Count</th>
+                    <th>GDP per Capita</th>
+                </tr>
+                @foreach (countriesGrpdMedals item in ViewBag.highGDPlowMedalsCountries)
+                {
+                    <tr>
+                        <td>
+                            @item.CountryName
+                        </td>
+                        <td>
+                            @item.MedalCount
+                        </td>
+                        <td align="right">
+                            @Math.Round(@item.GDP)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </td>
+    </tr>
+</table>
